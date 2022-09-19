@@ -79,7 +79,7 @@ ul,li,label,input,button,h2 {
 
 .main {
     display: grid;
-    grid-template: 1fr 5fr / 1fr;
+    grid-template: 1fr .2fr 5fr / 1fr;
 }
 
 .header {
@@ -143,6 +143,12 @@ ul,li,label,input,button,h2 {
 .user-actions button {
     padding: calc(.1rem + .2vw + .2vh) calc(.1rem + .5vw + .5vh);
     border-radius: 15px;
+}
+
+.headings {
+    max-height: 50px;
+    display: grid;
+    grid-template: minmax(10vh, 100px) / 3fr 1fr;
 }
 
 .content {
