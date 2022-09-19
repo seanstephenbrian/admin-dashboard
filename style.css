@@ -40,27 +40,28 @@ ul,li,label,input,button,h2 {
 }
 
 .sidebar {
+    height: 100vh;
     display: grid;
-    grid-template: 10vh 30vh 20vh / 1fr;
+    row-gap: calc(1rem + 5vh);
+    grid-template: 1fr 2fr 5fr / 1fr;
+}
+
+.sidebar img {
+    height: 100%;
 }
 
 .logo {
+    max-height: 15vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.logo img {
-    height: 100%;
-}
-
-.user-options img {
-    height: 100%;
-}
-
-.user-options-links {
+.user-options-links,
+.settings-links {
     display: grid;
-    grid-template-rows: repeat(5, minmax(1rem, 5vh));
+    grid-template-rows: minmax(1rem, 5vh);
+    grid-auto-rows: minmax(1rem, 5vh);
 }
 
 .user-options-links li,
@@ -68,11 +69,6 @@ ul,li,label,input,button,h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.settings-links {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
 }
 
 .main {
