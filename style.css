@@ -79,7 +79,7 @@ ul,li,label,input,button,h2 {
 
 .main {
     display: grid;
-    grid-template: 1fr .2fr 5fr / 1fr;
+    grid-template: calc(5rem + 3vh + 3vw) .2fr 5fr / 1fr;
 }
 
 .header {
@@ -168,6 +168,34 @@ ul,li,label,input,button,h2 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.project-card {
+    margin: calc(0.5vh + 0.5vw);
+    display: grid;
+    grid-template: 1fr 3fr calc(1.5rem + 2vh) / 1fr 1fr;
+    grid-template-areas: 
+        "title title"
+        "info info"
+        ". icons";
+}
+
+.project-title {
+    grid-area: title;
+    align-self: end;
+}
+
+.project-info {
+    grid-area: info;
+}
+
+.project-icons {
+    grid-area: icons;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-icons img {
+    max-height: 100%;
+}
 
 .right-column {
     display: grid;
