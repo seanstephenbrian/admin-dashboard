@@ -277,10 +277,15 @@ div.user-greeting .profile-picture {
     font-weight: bold;
 }
 
+.announcements-heading {
+    margin-left: calc(0.6vh + 0.6vw);
+}
+
 .content {
     margin-left: calc(0.5vh + 0.5vw);
     display: grid;
     grid-template: 1fr / 5fr 2fr;
+    column-gap: calc(2*(0.5vh + 0.5vw));
 }
 
 .projects {
@@ -344,13 +349,19 @@ div.user-greeting .profile-picture {
 
 .right-column {
     display: grid;
-    grid-template: 1fr 1fr / 1fr;
+    grid-template: clamp(100px, 400px, 75vh) clamp(100px, 400px, 85vh) / 1fr;
 }
 
 .announcements {
+    margin: calc(0.5vh + 0.5vw);
     display: grid;
     grid-template: 1fr / 1fr;
     grid-auto-rows: 1fr;
+    background-color: rgba(255, 255, 255, 0.777);
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 0 0 7px var(--black-shadow);
+    padding-bottom: calc(.2*var(--rvv));
 }
 
 .announcement {
@@ -365,6 +376,14 @@ div.user-greeting .profile-picture {
     border-bottom: none;
 }
 
+.announcement-heading {
+    font-style: bolder;
+}
+
+.announcement-text {
+    font-size: calc(.28*var(--rvv));
+}
+
 .trending {
     display: grid;
     align-items: center;
@@ -373,13 +392,19 @@ div.user-greeting .profile-picture {
 
 .trending-heading {
     height: 100%;
+    margin-bottom: calc(.3*var(--rvv));
 }
 
 .trending-items-container {
+    margin: calc(0.5vh + 0.5vw);
     height: 100%;
     display: grid;
     grid-template: 1fr / 1fr;
     grid-auto-rows: 1fr;
+    background-color: rgba(255, 255, 255, 0.777);
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: 0 0 7px var(--black-shadow);
 }
 
 .trending-item {
