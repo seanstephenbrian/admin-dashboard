@@ -68,6 +68,7 @@ ul,li,label,input,button,h2 {
     display: grid;
     grid-template-rows: minmax(1rem, 5vh);
     grid-auto-rows: minmax(1rem, 5vh);
+    row-gap: calc(.2rem + 1vh);
 }
 
 .user-options-links li,
