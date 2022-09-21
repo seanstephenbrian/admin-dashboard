@@ -51,14 +51,6 @@ body {
     background-color: #ffcc92;
 }
 
-/* div {
-    border: 1px solid blue;
-}
-
-ul,li,label,input,button,h2 {
-    border: .5px dotted red;
-} */
-
 .sidebar {
     min-height: 100%;
     display: grid;
@@ -261,10 +253,10 @@ div.user-greeting .profile-picture {
 }
 
 .headings {
-    padding-top: 1rem;
-    margin-left: calc(2*(0.5vh + 0.5vw));
-    display: grid;
-    grid-template: minmax(2rem, 6vh) / 5fr 2fr;
+    margin-left: calc(0.5vh + 0.5vw);
+    grid-area: headings;
+    display: flex;
+    align-items: flex-end;
 }
 
 .projects-heading,
@@ -273,22 +265,28 @@ div.user-greeting .profile-picture {
     max-height: 100%;
     display: flex;
     align-items: flex-end;
-    font-size: 120%;
+    font-size: calc(.55*var(--rvv));
     font-weight: bold;
 }
 
+
 .announcements-heading {
-    margin-left: calc(0.6vh + 0.6vw);
+    position: absolute;
+    top: calc((-1.15)*var(--rvv));
 }
 
 .content {
     margin-left: calc(0.5vh + 0.5vw);
     display: grid;
-    grid-template: 1fr / 5fr 2fr;
+    grid-template: calc(1.5*var(--rvv)) 1fr / 5fr 2fr;
+    grid-template-areas: 
+        "headings headings"
+        "projects right-column";
     column-gap: calc(2*(0.5vh + 0.5vw));
 }
 
 .projects {
+    grid-area: projects;
     display: grid;
     grid-template-rows: 1fr;
     grid-auto-rows: 1fr;
@@ -299,6 +297,7 @@ div.user-greeting .profile-picture {
     margin: calc(0.5vh + 0.5vw);
     display: grid;
     grid-template: 1fr 3fr calc(1.4*var(--rvv)) / 1fr 1fr;
+    row-gap: calc(.7*var(--rvv));
     grid-template-areas: 
         "title title"
         "info info"
@@ -312,15 +311,21 @@ div.user-greeting .profile-picture {
 }
 
 .project-title {
+    font-style: italic;
     grid-area: title;
     align-self: end;
     font-size: 130%;
     font-weight: bolder;
     cursor: pointer;
+    border-bottom: 1px solid grey;
 }
 
 .project-info {
     grid-area: info;
+}
+
+.book-title {
+    font-style: italic;
 }
 
 .project-icons {
@@ -348,11 +353,14 @@ div.user-greeting .profile-picture {
 }
 
 .right-column {
+    grid-area: right-column;
     display: grid;
-    grid-template: clamp(100px, 400px, 75vh) clamp(100px, 400px, 85vh) / 1fr;
+    grid-template: clamp(100px, 400px, 85vh) clamp(100px, 400px, 85vh) / 1fr;
+    margin-right: calc(0.5vh + 0.5vw);
 }
 
 .announcements {
+    position: relative;
     margin: calc(0.5vh + 0.5vw);
     display: grid;
     grid-template: 1fr / 1fr;
@@ -365,6 +373,7 @@ div.user-greeting .profile-picture {
 }
 
 .announcement {
+    max-width: calc(7*var(--rvv));
     margin: 0 2vw;
     display: flex;
     flex-direction: column;
@@ -378,24 +387,31 @@ div.user-greeting .profile-picture {
 
 .announcement-heading {
     font-style: bolder;
+    cursor: pointer;
 }
 
 .announcement-text {
     font-size: calc(.28*var(--rvv));
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .trending {
+    margin-top: calc(.3*var(--rvv));
     display: grid;
     align-items: center;
     grid-template: minmax(2rem, 6vh) 1fr / 1fr;
+    row-gap: calc(.8*var(--rvv));
 }
 
 .trending-heading {
     height: 100%;
-    margin-bottom: calc(.3*var(--rvv));
+    padding-left: calc(.3*var(--rvv));
 }
 
 .trending-items-container {
+    padding: calc(.3*var(--rvv));
     margin: calc(0.5vh + 0.5vw);
     height: 100%;
     display: grid;
@@ -410,9 +426,24 @@ div.user-greeting .profile-picture {
 .trending-item {
     margin: 0 2vw;
     display: flex;
+    gap: calc(.3*var(--rvv));
+    align-items: center;
 }
 
 .trending-icon img {
     height: calc(1rem + 1.5vw + 1.5vh);
     max-height: 3rem;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 0 0 10px var(--black-shadow);
+}
+
+.trending-icon,
+.trending-creator,
+.trending-title {
+    cursor: pointer;
+}
+
+.trending-title {
+    font-style: italic;
 }
