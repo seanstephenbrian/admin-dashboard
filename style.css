@@ -47,11 +47,15 @@ html, body {
 body {
     font-family: 'Sublima', Helvetica, 'Open Sans', sans-serif;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template: 1fr 10px / 1fr 5fr;
+    grid-template-areas: 
+        "sidebar main"
+        "footer footer";
     background-color: #ffcc92;
 }
 
 .sidebar {
+    grid-area: sidebar;
     min-height: 100%;
     display: grid;
     row-gap: calc(.5rem + 1vh);
@@ -113,6 +117,7 @@ body {
 }
 
 .main {
+    grid-area: main;
     display: grid;
     grid-template: minmax(.9fr, 200px) .2fr 5fr / 1fr;
 }
@@ -360,7 +365,7 @@ q {
 .right-column {
     grid-area: right-column;
     display: grid;
-    grid-template: clamp(100px, 400px, 85vh) clamp(100px, 400px, 85vh) / 1fr;
+    grid-template: clamp(100px, 400px, 100vh) clamp(100px, 400px, 85vh) / 1fr;
     margin-right: calc(0.5vh + 0.5vw);
 }
 
@@ -396,10 +401,23 @@ q {
 }
 
 .announcement-text {
-    font-size: calc(.28*var(--rvv));
+    font-size: calc(.3*var(--rvv));
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .announcement-text {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 300px) {
+    .announcement-text {
+        display: none;
+    }
 }
 
 .trending {
@@ -456,4 +474,20 @@ q {
 
 .trending-title {
     font-style: italic;
+}
+
+.sidebar,
+.main {
+    margin-bottom: calc(2*var(--rvv));
+}
+
+footer {
+    color: #fff2e2;
+    font-size: calc(.4*var(--rvv));
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(1rem + var(--rvv));
+    background-color: #2f9396;
 }
