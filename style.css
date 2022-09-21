@@ -288,15 +288,15 @@ div.user-greeting .profile-picture {
 .projects {
     grid-area: projects;
     display: grid;
-    grid-template-rows: 1fr;
-    grid-auto-rows: 1fr;
+    grid-template-rows: minmax(1fr, 100px);
+    grid-auto-rows: minmax(1fr, 100px);
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .project-card {
     margin: calc(0.5vh + 0.5vw);
     display: grid;
-    grid-template: 1fr 3fr calc(1.4*var(--rvv)) / 1fr 1fr;
+    grid-template: minmax(10px, 60px) 3fr calc(1.4*var(--rvv)) / 1fr 1fr;
     row-gap: calc(.7*var(--rvv));
     grid-template-areas: 
         "title title"
@@ -326,6 +326,11 @@ div.user-greeting .profile-picture {
 
 .book-title {
     font-style: italic;
+}
+
+q {
+    margin-left: 1rem;
+    font-size: 80%;
 }
 
 .project-icons {
@@ -412,7 +417,7 @@ div.user-greeting .profile-picture {
 
 .trending-items-container {
     padding: calc(.3*var(--rvv));
-    margin: calc(0.5vh + 0.5vw);
+    margin: 0 calc(0.5vh + 0.5vw) calc(0.5vh + 0.5vw);
     height: 100%;
     display: grid;
     grid-template: 1fr / 1fr;
@@ -428,6 +433,11 @@ div.user-greeting .profile-picture {
     display: flex;
     gap: calc(.3*var(--rvv));
     align-items: center;
+    border-bottom: 1px solid grey;
+}
+
+.trending-items-container div:last-of-type {
+    border-bottom: none;
 }
 
 .trending-icon img {
