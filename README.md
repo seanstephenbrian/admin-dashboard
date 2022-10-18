@@ -2,6 +2,8 @@
 
 This admin dashboard was my final project for the Odin Project's Intermediate HTML & CSS course. 
 
+Live version: https://seanstephenbrian.github.io/admin-dashboard/
+
 I primarily used CSS grid to reproduce the page design provided in the prompt.
 
 The assignment:
