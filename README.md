@@ -2,7 +2,9 @@
 
 This admin dashboard was my final project for the Odin Project's Intermediate HTML & CSS course. 
 
-I used CSS grid to reproduce the page design provided in the assignment prompt:
+I primarily used CSS grid to reproduce the page design provided in the prompt.
+
+The assignment:
 
 ![Odin Project design assignment](https://raw.githubusercontent.com/seanstephenbrian/admin-dashboard/main/img/assignment.png)
 
