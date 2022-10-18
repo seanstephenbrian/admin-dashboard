@@ -4,11 +4,11 @@ This admin dashboard was my final project for the Odin Project's Intermediate HT
 
 I used CSS grid to reproduce the page design provided in the assignment prompt:
 
-![Odin Project design assignment](assignment.png)
+![Odin Project design assignment](https://raw.githubusercontent.com/seanstephenbrian/admin-dashboard/main/img/assignment.png)
 
 My design:
 
-![My design submission](submission.png)
+![My design submission](https://raw.githubusercontent.com/seanstephenbrian/admin-dashboard/main/img/submission.png)
 
 While the overall page layout is almost identical to the prompt, I tried to develop a coherent and unique design
 concept with my choices for the color scheme, icons, borders, etc. The color palette is inspired by tones
