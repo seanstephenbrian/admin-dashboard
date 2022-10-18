@@ -1,3 +1,5 @@
+// this code adds favorite, edit, and share SVG icons to the bottom of all of the project cards:
+
 function generateProjectIcons() {
     const projectIcons = document.querySelectorAll('.project-icons');
     projectIcons.forEach(div => {
